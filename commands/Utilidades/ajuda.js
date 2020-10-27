@@ -1,7 +1,10 @@
 const Discord = require("discord.js")
-const c = require('../config.json')
+const c = require('../../config.json')
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'ajuda',
+	aliases: ['help', 'painel'],
+  run: async (client, message, args) => {
 message.delete();
 
     let painel = new Discord.MessageEmbed()
@@ -175,8 +178,4 @@ message.delete();
      })
   })
 }
-
-exports.help = {
-    name: 'help',
-    aliases: ['ajuda']
 }

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-const c = require('../config.json')
+const c = require('../../config.json')
 
 module.exports = {
 	name: 'supreme',

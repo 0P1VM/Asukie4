@@ -4,9 +4,12 @@ const db = require('quick.db')
 const random = new Random()
 
 module.exports = {
-  name: "cry",
-  run: async (client, message, args) => {
-message.delete();
+  name: "Cry",
+  aliases: ["chorar"],
+  description: "Chorando",
+  category: "Interação",
+  run: async(client, message, args) => {
+message.delete()
 
     var manutenção = await db.get(`manutenção`)
   

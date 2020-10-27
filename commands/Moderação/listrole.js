@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-    message.delete();
-
+module.exports = {
+	name: 'listrole',
+	aliases: ['listacargos', 'todoscargos'],
+  run: async (client, message, args) => {
+message.delete();
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -25,8 +27,9 @@ var manutenção = await db.get(`manutenção`)
         .setDescription(message.guild.roles.cache.map(r => `${r}`).join(", "))
         .setFooter(`Requisitado: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setColor("#0f4bff")
-        message.channel.send(roles).then(m => {
-        //await message.channel.send(roles).then(m => {
-//m.delete({timeout: 15000})
+        await message.channel.send(roles).then(m => {
+        m.delete({timeout: 15000})
     }
-                                               )}
+
+                                         )}
+}

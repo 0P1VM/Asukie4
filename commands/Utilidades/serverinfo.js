@@ -4,8 +4,10 @@ const db = require('quick.db')
 
 moment.locale('pt-BR')
 
-exports.run = async (client, message, args) => {
-message.delete(); 
+module.exports = {
+	name: 'serverinfo',
+  run: async (client, message, args) => {
+message.delete();
 
 var manutenção = await db.get(`manutenção`)
   
@@ -50,4 +52,5 @@ var manutenção = await db.get(`manutenção`)
 )
 
 message.channel.send(serverinfo)
+}
 }

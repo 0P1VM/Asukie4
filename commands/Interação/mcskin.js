@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'mcskin',
+	aliases: ['minecraftskin'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -32,8 +35,4 @@ var manutenção = await db.get(`manutenção`)
         .setColor('#0f4bff')
     message.channel.send(embed)
 }
-
-exports.help = {
-    name: 'mcskin',
-    aliases: ['skin']
 }

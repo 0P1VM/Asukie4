@@ -1,11 +1,13 @@
 const Discord = require('discord.js');
-const c = require('../config.json')
+const c = require('../../config.json')
 const moment = require('moment');
 const db = require('quick.db')
 
 moment.locale('pt-BR')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'userinfo',
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -51,4 +53,5 @@ let userinfo = new Discord.MessageEmbed()
 message.channel.send(userinfo).then(m => {
 m.delete({timeout: 20000})
 })
+}
 }

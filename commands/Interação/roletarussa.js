@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 
-exports.run = async(client, message, args) => {
+module.exports = {
+	name: 'roletarussa',
+	aliases: ['roleta', 'girar'],
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -31,8 +33,4 @@ var manutenção = await db.get(`manutenção`)
         message.channel.send(`Rodou o cartucho e você... **MORREU**! <:AsukieCry:762822300563144705>`)
       }
 }
-
-exports.help = {
-    name: 'roletarussa',
-    aliases: []
 }

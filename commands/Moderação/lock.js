@@ -1,8 +1,11 @@
 const Discord = require('discord.js')
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+	name: 'lock',
+	aliases: ['trancar', 'fechar'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -57,4 +60,5 @@ var manutenção = await db.get(`manutenção`)
                 
       })
     })
+}
 }

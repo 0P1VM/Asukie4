@@ -1,5 +1,5 @@
 const Jimp = require('jimp')
-const c = require('../config.json')
+const c = require('../../config.json')
 const Discord = require('discord.js')
 const db = require('quick.db')
 

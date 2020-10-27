@@ -1,10 +1,13 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-message.delete();
-
-
+module.exports = {
+  name: "Cocegas",
+  aliases: ["tickle"],
+  description: "use esse comando para fazer cocegas em alguém",
+  category: "Interação",
+  run: async(client, message, args) => {
+message.delete()
 
 var manutenção = await db.get(`manutenção`)
   
@@ -27,8 +30,4 @@ var manutenção = await db.get(`manutenção`)
     message.channel.send(`<a:Dado:764302636349915196> **|** O dado que você jogou caiu em: \`${number}\``)
 
 }
-
-exports.help = {
-    name: 'dado',
-    aliases: ['dice']
 }

@@ -4,6 +4,7 @@ const db = require('quick.db')
 
 module.exports = {
   name: "serfil",
+  aliases: ['filme', 'serie'],
   run: async (client, message, args) => {
     
     var manutenção = await db.get(`manutenção`)

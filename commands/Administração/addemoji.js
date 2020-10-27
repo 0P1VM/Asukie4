@@ -1,9 +1,13 @@
 const Discord = require('discord.js')
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-message.delete();
+module.exports = {
+  name: "addemoji",
+  description: "use esse comando para adicionar algum emoji.",
+  category: "Administração",
+  run: async(client, message, args) => {
+message.delete()
 
 var manutenção = await db.get(`manutenção`)
   
@@ -43,8 +47,4 @@ m.delete({timeout: 20000})
 })
         };
 }
-
-exports.help = {
-  name: 'addemoji',
-  aliases: []
 }

@@ -1,9 +1,11 @@
 const Discord = require("discord.js"); 
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'avatar',
+	aliases: ['av'],
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -31,4 +33,5 @@ var manutenção = await db.get(`manutenção`)
     .setFooter(`Requisitado: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}));
  await message.channel.send(embed);
 
-};
+}
+}

@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
 const { parse } = require('twemoji-parser')
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-module.exports.run = async (client, message, args) => {
-  
-  message.delete();
-
+module.exports = {
+	name: 'emoji',
+  run: async (client, message, args) => {
+message.delete();
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -48,7 +48,4 @@ var manutenção = await db.get(`manutenção`)
       return message.channel.send(embed);
    }
 }
-exports.help = {
-    name: 'emoji',
-    aliases: ['enlarge']
 }

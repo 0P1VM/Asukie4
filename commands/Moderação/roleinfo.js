@@ -6,7 +6,7 @@ module.exports = {
 	name: 'roleinfo',
 	category: 'Info',
 	description: 'Displays information about a provided role.',
-	aliases: ['role', 'ri'],
+	aliases: ['cargoinfo', 'infocargo'],
 	usage: 'roleinfo <role>',
 	run: async (client, message, args) => {
     

@@ -2,13 +2,17 @@ const Discord = require("discord.js");
 const cpuStat = require("cpu-stat");
 const os = require('os')
 const moment = require("moment")
-const c = require('../config.json');
+const c = require('../../config.json');
 const db = require('quick.db')
 
 moment.locale('pt-BR')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'botinfo',
+  aliases: ['info'],
+  run: async (client, message, args) => {
 message.delete();
+
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -32,7 +36,8 @@ var manutenção = await db.get(`manutenção`)
     var adicioneeu = ('[Clique Aqui](https://discord.com/api/oauth2/authorize?client_id=749044223692767302&permissions=8&scope=bot)')
     var suporte = ('[Clique Aqui](https://discord.gg/n5eNazJ)')
     var dev = "<@!719944880800923690>"
-    var dev1 = "<@!268403900355313674>"
+    var dev1 = "<@!268403900355313674>" 
+    let users = client.users.cache.size;
 
     let dias = 0; 
     let week = 0; 
@@ -77,7 +82,7 @@ var manutenção = await db.get(`manutenção`)
    `> Data de entrada: \`${moment(client.user.joinedAt).format('LL')}\``)
    .addField(`<:ets:761068291941990400> **| Estatísticas:**`, `> Servidores: \`${client.guilds.cache.size}\`\n` +
    `> Total de canais: \`${client.channels.cache.size}\`\n` +
-   `> Quantia de usuários: \`${client.users.cache.size}\``)
+   `> Quantia de usuários: \`${users}\``)
    .addField(`<:pgm:761068488424161351> **| Informações Técnicas:**`, `<:BlueSeta_:765293754637877268> Linguagem: **${linguagem}**\n` +
    `<:BlueSeta_:765293754637877268> Hospedagem: **${host}**\n` +
    `<:BlueSeta_:765293754637877268> Documentação: **${livraria}**\n` +
@@ -93,8 +98,4 @@ m.delete({timeout: 25000})
 
             })
            }
-      
-exports.help = {
-    name: 'botinfo',
-    aliases: ['info', 'infobot', 'infos']
 }

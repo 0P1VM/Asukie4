@@ -1,8 +1,11 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
-  message.delete();
-  
+module.exports = {
+	name: 'reiniciar',
+	aliases: ['reload'],
+  run: async (client, message, args) => {
+message.delete();
+
 var owner = [
 "268403900355313674", 
 "719944880800923690",
@@ -21,7 +24,4 @@ m.delete({timeout: 5000})
         console.log('Fui Reiniciada com sucesso.')
         }
     }
-    exports.help = {
-    name: 'reiniciar',
-    aliases: ['religar']
 }

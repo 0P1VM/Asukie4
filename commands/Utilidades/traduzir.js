@@ -109,9 +109,11 @@ let langs = {
     'yo': 'Yoruba',
     'zu': 'Zulu'
 }
- exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'traduzir',
+	aliases: ['tradução', 'translate'],
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -155,4 +157,5 @@ m.delete({timeout: 20000})
 m.delete({timeout: 20000})
 })
   })
-};
+}
+}

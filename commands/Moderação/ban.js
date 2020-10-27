@@ -1,10 +1,12 @@
 const Discord = require("discord.js");
-const c = require("../config.json");
+const c = require("../../config.json");
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
-  message.delete();
-
+module.exports = {
+	name: 'ban',
+	aliases: ['banir', 'punir'],
+  run: async (client, message, args) => {
+message.delete();
 
 var manutenção = await db.get(`manutenção`)
   
@@ -238,4 +240,5 @@ m.channel.send(unkn)
   coletor2.on("collect", cp => {
     confirm_msg.delete();
   })
+}
 }

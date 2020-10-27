@@ -2,14 +2,12 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 
 module.exports = {
-    name: 'covidsin',
-	description: 'Sintomas do COVID-19',
-    aliases: ['covidsintoma', 'c19sin'],
-    usage: '$covidsin',
-    cooldown: 5,
-	run: async (client, message, args) => {
-message.delete();
-
+  name: "covidsin",
+  aliases: ["csin"],
+  description: "use esse comando para ver os sintomas da covid",
+  category: "Interação",
+  run: async(client, message, args) => {
+message.delete()
 
 var manutenção = await db.get(`manutenção`)
   

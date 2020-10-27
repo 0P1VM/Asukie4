@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-const c = require("../config.json")
+const c = require("../../config.json")
 
 module.exports = {
     name: 'kill',
-    aliases: ['matar', 'morrer'],
+    aliases: ['matar'],
 run: async (client, message, args) => {
 message.delete();
 

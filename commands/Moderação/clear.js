@@ -1,8 +1,11 @@
 const Discord = require('discord.js')
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'clear',
+	aliases: ['limpar', 'clean'],
+  run: async (client, message, args) => {
 
 var manutenção = await db.get(`manutenção`)
   
@@ -45,4 +48,5 @@ var manutenção = await db.get(`manutenção`)
     } catch(e){ 
         console.log(e); 
     }
+}
 }

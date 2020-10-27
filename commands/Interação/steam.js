@@ -3,9 +3,10 @@ var steam = require('steam-provider') //npm i steam-provider
 var provider = new steam.SteamProvider();
 const db = require('quick.db')
 
-exports.run = async(client, message, args) => {
+module.exports = {
+	name: 'steam',
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -40,4 +41,5 @@ m.delete({timeout: 20000})
               })
     })
 })
+}
 }

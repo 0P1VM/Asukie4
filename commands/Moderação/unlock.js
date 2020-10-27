@@ -1,8 +1,11 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
-    module.exports.run = async(client, message, args) => {
-       message.delete();
+module.exports = {
+	name: 'unlock',
+	aliases: ['destrancar', 'desbloquear'],
+  run: async (client, message, args) => {
+message.delete();
 
 var manutenção = await db.get(`manutenção`)
   
@@ -39,7 +42,4 @@ let a1 = new Discord.MessageEmbed()
     m.delete({timeout : 7000})
     });
         }
-
-module.exports.help = {
-    name: "unlock"
   }

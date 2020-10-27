@@ -1,8 +1,11 @@
 const { MessageEmbed } = require('discord.js')
 const db = require ('quick.db')
-const c = require('../config.json')
+const c = require('../../config.json')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'manutencao',
+  aliases: ['manutenção'],
+  run: async (client, message, args) => {
 message.delete();
 
     let embedDev = new MessageEmbed()
@@ -47,7 +50,4 @@ message.delete();
         }
     }
 }
-exports.help = { 
-  name: 'manutenção',
-  aliases: ['manutencao']
 }

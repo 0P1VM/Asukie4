@@ -3,7 +3,10 @@ const cpuStat = require("cpu-stat");
  const os = require('os')
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'cpu',
+	aliases: ['computer', 'computação'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -41,7 +44,4 @@ var manutenção = await db.get(`manutenção`)
   message.channel.send(embed)
       })
   }
-exports.help = {
-    name: 'cpu',
-    aliases: ['maquina']
 }

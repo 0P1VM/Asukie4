@@ -1,8 +1,11 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
-exports.run = async (client, message) => {
+module.exports = {
+	name: 'invite',
+	aliases: ['asukie', 'convite', 'links'],
+  run: async (client, message, args) => {
 message.delete();
-  
+
     let embed1 = new Discord.MessageEmbed()
     .setColor('#0f4bff')
     .setAuthor(`${client.user.username} | Invite`, client.user.displayAvatarURL({dynamic: true}))
@@ -14,4 +17,5 @@ message.delete();
     message.channel.send(embed1).then(m => {
 m.delete({timeout: 25000})
 })
-};
+}
+}

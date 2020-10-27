@@ -1,9 +1,12 @@
 const Discord = require('discord.js');
 const superagent = require('superagent')
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'slap',
+	aliases: ['tapa', 'bater'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -48,4 +51,5 @@ let avatar = message.author.displayAvatarURL({dynamic: true});
   await message.channel.send(embed).then(m => {
 m.delete({timeout: 15000})
 })
+}
 }

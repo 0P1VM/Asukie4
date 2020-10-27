@@ -2,7 +2,10 @@ const Discord = require("discord.js");
 const db = require('quick.db')
 
 
-exports.run = async(client, message, args) => { // Aqui definimos nosso client, message e args
+module.exports = {
+	name: 'latencia',
+	aliases: ['ping', 'ms', 'latência'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -54,8 +57,4 @@ var manutenção = await db.get(`manutenção`)
     }, 5000)
 
 }
-
-exports.help = {
-    name: 'latencia',
-    aliases: ["ping, latência"]
 }

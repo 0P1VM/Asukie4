@@ -1,11 +1,15 @@
 const Discord = require('discord.js');
-const c = require('../config.json');
+const c = require('../../config.json');
 const ms = require('ms');
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-message.delete();
-
+module.exports = {
+  name: "Cronometro",
+  aliases: ["timer"],
+  description: "use esse comando para cronometrar o tempo",
+  category: "Interação",
+  run: async(client, message, args) => {
+message.delete()
 
 var manutenção = await db.get(`manutenção`)
   
@@ -51,8 +55,4 @@ var manutenção = await db.get(`manutenção`)
 
   }, ms(Timer));
 }
-
-exports.help = {
-    name: 'lembrar',
-    aliases: ['lembrete', 'cronometro', 'cronômetro']
 }

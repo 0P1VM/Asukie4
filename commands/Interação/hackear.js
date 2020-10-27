@@ -1,9 +1,12 @@
 const Discord = require('discord.js'); 
-const c = require('../config.json')
+const c = require('../../config.json')
 const time = ""
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => { 
+module.exports = {
+	name: 'hackear',
+	aliases: ['rakerman', 'hackerman'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -62,8 +65,4 @@ msg.channel.send(embed)
 m.delete({timeout: 15000})
 })
 }
-
-exports.help = { 
-    name: 'hackerman',
-    aliases: ['hackeando', 'hackeador']
 }

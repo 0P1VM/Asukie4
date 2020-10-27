@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-if (message.deletable) message.delete()
+module.exports = {
+	name: 'servericon',
+  run: async (client, message, args) => {
+message.delete();
 
 var manutenção = await db.get(`manutenção`)
   
@@ -31,8 +33,4 @@ var manutenção = await db.get(`manutenção`)
     message.channel.send(servericon);
 
 }
-
-exports.help = {
-    name: 'servericon',
-    aliases: ['ícone', 'icon']
 }

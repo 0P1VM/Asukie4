@@ -1,6 +1,7 @@
 const { readdirSync } = require("fs")
 
 module.exports = (client) => {
+    console.log(`[COMANDOS] Carregando...`);
     const load = dirs => {    
         const eventos = readdirSync(`./eventos/${dirs}/`).filter(d => d.endsWith('.js'));
         for (let file of eventos) {

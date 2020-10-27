@@ -1,9 +1,12 @@
 const Discord = require("discord.js");
-const c = require("../config.json");
+const c = require("../../config.json");
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
-  message.delete();
+module.exports = {
+	name: 'unban',
+	aliases: ['desbanir', 'despunir'],
+  run: async (client, message, args) => {
+message.delete();
 
  let aliases = new Discord.MessageEmbed()
 .setAuthor(`Comando inválido | ${client.user.username}`, 'https://images-ext-1.discordapp.net/external/68qa_JhFyKLs4CPQn5ZI3ECElC2W-jjeJGh5DxtOrgw/%3Fv%3D1/https/cdn.discordapp.com/emojis/766406396337193020.png?width=104&height=104')
@@ -88,4 +91,5 @@ m.delete({timeout: 15000})
 
 
       
+}
 }

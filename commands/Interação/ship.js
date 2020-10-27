@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
-const c = require('../config.json')
+const c = require('../../config.json')
 const db = require('quick.db')
 
-module.exports.run = async(client, message, args) => {
+module.exports = {
+	name: 'ship',
+	aliases: ['shipar'],
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -61,4 +63,5 @@ var manutenção = await db.get(`manutenção`)
                                 message.channel.send(embed).then(m => {
 m.delete({timeout: 20000})
 })
+}
 }

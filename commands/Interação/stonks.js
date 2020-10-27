@@ -1,11 +1,12 @@
 const jimp = require("jimp")
 const Discord = require('discord.js')
 const db = require("quick.db")
-const c = require('../config.json')
+const c = require('../../config.json')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'stonks',
+  run: async (client, message, args) => {
 message.delete();
-
 var manutenção = await db.get(`manutenção`)
   
     if(!manutenção === true){
@@ -45,3 +46,4 @@ m.delete({timeout: 20000})
     }
                                                                                                  )}
       }
+}

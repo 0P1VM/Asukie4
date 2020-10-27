@@ -5,7 +5,7 @@ const db = require('quick.db')
 module.exports = {
   config: {
     name: 'suicide',
-    aliases: [''],
+    aliases: ['suicidar', 'morrer'],
   },
   run: async (client, message) => {
     

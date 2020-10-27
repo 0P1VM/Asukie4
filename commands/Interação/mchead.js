@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'mchead',
+	aliases: ['minecrafthead', 'cabeça'],
+  run: async (client, message, args) => {
 message.delete();
 
 var manutenção = await db.get(`manutenção`)
@@ -33,8 +36,4 @@ var manutenção = await db.get(`manutenção`)
         
     message.channel.send(embed)
 }
-
-exports.help = {
-    name: 'mchead',
-    aliases: ['head']
 }

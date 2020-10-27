@@ -1,8 +1,10 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
-module.exports.run = async (client, message, args) => {
-  message.delete();
+module.exports = {
+	name: 'gay',
+  run: async (client, message, args) => {
+message.delete();
 
 var manutenção = await db.get(`manutenção`)
   
@@ -36,11 +38,8 @@ m.delete({timeout: 15000})
 })
    
 }
+}
 
 function ran(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-module.exports.help = {
-    name:"gay"
-} 

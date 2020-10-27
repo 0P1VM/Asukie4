@@ -16,4 +16,4 @@ client.categories = fs.readdirSync("./commands/");
 ["commands", "eventos"].forEach(x => require(`./handlers/${x}`)(client));
 
 
-client.login(process.env.TOKEN)
+client.login(config.token)

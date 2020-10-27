@@ -2,10 +2,11 @@ const discord = require("discord.js");
 const { Random } = require("something-random-on-discord");
 const random = new Random();
 const db = require('quick.db')
-const c = require('../config.json')
+const c = require('../../config.json')
 
 module.exports = {
   name: "soco",
+ aliases: ['punch', 'socar'],
   run: async (client, message, args) => {
     message.delete();
    var manutenção = await db.get(`manutenção`)

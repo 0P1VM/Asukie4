@@ -2,9 +2,11 @@ const Discord = require('discord.js')
 var Jimp = require("jimp")
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+	name: 'primeiraspalavras',
+	aliases: ['firstwords'],
+  run: async (client, message, args) => {
 message.delete();
- 
 
 var manutenção = await db.get(`manutenção`)
   
@@ -48,8 +50,4 @@ var manutenção = await db.get(`manutenção`)
             }
         }
     }
-
-exports.help = {
-    name: "primeiraspalavras",
-    aliases: ['']
 }
