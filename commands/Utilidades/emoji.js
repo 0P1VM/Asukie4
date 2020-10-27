@@ -24,14 +24,14 @@ var manutenção = await db.get(`manutenção`)
     } 
   
    const emoji = args[0];
-   if (!emoji) return message.channel.send(`<a:errado:753245066965024871> **|** Coloque o emoji após o comando. **ex:** \`${c.prefix}emoji <emoji> `);
+   if (!emoji) return message.channel.send(`<a:errado:753245066965024871> **|** Coloque o emoji após o comando. **ex:** \`${c.prefix}emoji <emoji>\` `);
 
    let custom = Discord.Util.parseEmoji(emoji);
 
    if (custom.id) {
       const embed = new Discord.MessageEmbed()
          .setAuthor(`Asukie™`, 'https://cdn.discordapp.com/emojis/760949427648725022.gif?v=1')
-         .setDescription(`[Download](https://cdn.discordapp.com/emojis/${custom.id}.${custom.animated ? "gif" : "png"})`)
+         .setDescription(`**Clique [aqui](https://cdn.discordapp.com/emojis/${custom.id}.${custom.animated ? "gif" : "png"}) para baixar a imagem**`)
          .setColor("#0f4bff")
          .setImage(`https://cdn.discordapp.com/emojis/${custom.id}.${custom.animated ? "gif" : "png"}`)
          .setFooter(`Requisitado: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}));

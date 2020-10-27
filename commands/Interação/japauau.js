@@ -33,7 +33,9 @@ var manutenção = await db.get(`manutenção`)
                 message.channel.send('<a:errado:753245066965024871> **|** Você ultrapassou o limite de 20 caracteres. Você não quer uma edição feia ne?')
             } else {
                     var authorMessage = message
-                    message.channel.send('<a:loading:753391174202425364> **|** Processando...').then(m => {m.delete({timeout: 3000})
+                    message.channel.send('<a:loading:753391174202425364> **|** Processando...').then(m => {
+m.delete();
+})
                         Jimp.read(`https://cdn.discordapp.com/attachments/506173362972917790/750511457682063450/2244.png`, function (err, image) {
                             if (err) message.channel.send('<a:errado:753245066965024871> **|** Ocorreu um erro ao criar a imagem.')
                             Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function (font) {
@@ -41,13 +43,11 @@ var manutenção = await db.get(`manutenção`)
                                 var aguardeMessage = message
                                 image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
                                     const attachment = new Discord.MessageAttachment(buffer, 'test.png')
-                                    message.channel.send(attachment).then(message => {
-                                        aguardeMessage.delete()
+                                    message.channel.send(attachment)
                                     })
                                 })
                             })
-                        })
-                    })
+  
                 }
             }
         }

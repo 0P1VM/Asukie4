@@ -5,7 +5,7 @@ const db = require('quick.db')
 
 module.exports = {
 	name: 'hug',
-	aliases: ['abraçar', 'abraço'],
+	aliases: ["abraçar"],
   run: async (client, message, args) => {
 message.delete();
 

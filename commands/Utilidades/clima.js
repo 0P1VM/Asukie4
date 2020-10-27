@@ -5,7 +5,7 @@ const db = require('quick.db')
 
 
 module.exports = {
-	name: 'hug',
+	name: 'clima',
   run: async (client, message, args) => {
 message.delete();
 var manutenção = await db.get(`manutenção`)
@@ -26,8 +26,7 @@ var manutenção = await db.get(`manutenção`)
 
     let erro = new Discord.MessageEmbed()
 
-  .setTitle(`INFORMAÇÃO`)
-  .setDescription(`*Veja o clima em alguma cidade*`)
+  .setDescription(`*Veja o clima de alguma cidade*`)
   .addField(`:hammer: | **Uso**`, `\`${c.prefix}clima <cidade>\``, true)
   .addField(`:book: | **Exemplo**`, `\`${c.prefix}clima Rio de Janeiro\``, true)
   .addField(`:bookmark: | **Permissão**`, `\`Nenhuma\``)
@@ -43,7 +42,7 @@ var manutenção = await db.get(`manutenção`)
         if (!result) return message.channel.send(erro)
         if (!result[0]) return message.channel.send(`<a:errado:753245066965024871> **|** Desculpe ${message.author}, não encontrei essa cidade.`)
         const embed = new Discord.MessageEmbed()
-            .setTitle('Asukie™ | Clima')
+            .setAuthor('Asukie™ | Clima', client.user.displayAvatarURL({dynamic: true}))
             .setDescription(`**${result[0].location.name}**`)
             .addField(`Temperatura`, `\`${result[0].current.temperature}°C\``, true)
             .addField(`Sensação Térmica`, `\`${result[0].current.feelslike}°C\``, true)           

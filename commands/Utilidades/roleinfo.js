@@ -43,7 +43,7 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			.setColor(role.hexColor)
       .setFooter(`Requisitado: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-      .setTitle("Asukie™ | RoleInfo")
+      .setAuthor("Asukie™ | RoleInfo", client.user.displayAvatarURL({dynamic: true}))
       .setThumbnail("https://cdn.discordapp.com/attachments/759155689733226517/770332756613398568/AsukieRoleinfo.png")
 			.addField('Nome', `\`${role.name}\``, true)
 		  .addField('Role ID', `\`${role.id}\``, true)

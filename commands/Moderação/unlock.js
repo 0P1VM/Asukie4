@@ -25,10 +25,12 @@ m.delete({timeout: 20000})
       
     } 
 
-  if (!message.guild.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`> <a:errado:753245066965024871> **|** Oops! Eu não tenho a permissão para \`Gerenciar Canais\``).then(m => {
+
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`> <a:errado:753245066965024871> **|** Oops! Você não tem a permissão de \`Gerenciar Canais\``).then(m => {
     m.delete({timeout : 7000})
     });
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`> <a:errado:753245066965024871> **|** Oops! Você não tem a permissão de \`Gerenciar Canais\``).then(m => {
+   if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) 
+   return message.channel.send(`> <a:errado:753245066965024871> **|** Oops! Eu não tenho a permissão para \`Gerenciar Canais\``).then(m => {
     m.delete({timeout : 7000})
     });
 
